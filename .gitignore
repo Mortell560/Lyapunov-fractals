@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Lyapunov fractals/opencv/vc15/lib/opencv_world454.lib
