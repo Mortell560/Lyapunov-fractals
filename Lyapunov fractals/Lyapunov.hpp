@@ -11,7 +11,7 @@ namespace Lyapunov {
 		double get_r(Lyapunov& lyapunov, int i, double x, double y, double z = 0);
 		constexpr inline double logistic_map(double r, double x);
 		constexpr inline double exponent_logistic_map(Lyapunov& lyapunov, double x, double y, double z = 0);
-		void generate_image(Lyapunov& lyapunov);
+		uint16_t generate_image(Lyapunov& lyapunov);
 
 	private:
 		std::string sequence;

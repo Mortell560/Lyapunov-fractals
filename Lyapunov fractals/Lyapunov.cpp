@@ -59,7 +59,7 @@ namespace Lyapunov {
 		return avg / lyapunov.iterations;
 	}
 
-	void Lyapunov::generate_image(Lyapunov& lyapunov) {
+	uint16_t Lyapunov::generate_image(Lyapunov& lyapunov) {
 		// for timing
 		auto start = std::chrono::high_resolution_clock::now();
 		cv::Mat mat = cv::Mat::zeros(lyapunov.window_size[0], lyapunov.window_size[1], CV_8UC3);
@@ -95,8 +95,10 @@ namespace Lyapunov {
 			}
 		}
 		auto end = std::chrono::high_resolution_clock::now();
-		std::cout << "Time taken: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << "ms" << std::endl;
-		cv::imshow("Image", mat);
-		cv::waitKey(0);
+		uint16_t time_taken = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+		std::cout << "Time taken: " << time_taken << "ms" << std::endl;
+		//cv::imshow("Image", mat);
+		//cv::waitKey(0);
+		return time_taken;
 	}
 };
